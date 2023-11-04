@@ -24,8 +24,8 @@ def analzying_reads(read, kmer_counts, kmer_size, threshold):
         
         #Fixing Sequence if there is Error
         else:
-            for y in range(kmer_size):  # For each of the four nucleotide bases
-                for base in ['A', 'T', 'C', 'G']:
+            for y in range(kmer_size):  
+                for base in ['A', 'T', 'C', 'G']: 
                     temp_kmer = kmer[:y] + base + kmer[y+1:] #reads each nucleotide and replaces one base at a time.
                     if temp_kmer in kmer_counts and kmer_counts[temp_kmer] > threshold:                
                         corrected_read[x+y] = base
